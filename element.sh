@@ -1,4 +1,5 @@
 #!/bin/bash
+# author: Mate
 
 PSQL="psql --username=freecodecamp --dbname=periodic_table -t -c"
 
