@@ -14,5 +14,10 @@ else
   fi
 
   SELECTED=$($PSQL "SELECT atomic_number, name, symbol, type, atomic_mass, name, melting_point_celsius, boiling_point_celsius FROM elements JOIN properties USING(atomic_number) JOIN types USING(type_id) WHERE $CONDITION")
-  echo $SELECTED
+  if [ -z $SELECTED ]
+  then 
+    echo "I could not find that element in the database."
+  else
+    echo
+  fi
 fi
